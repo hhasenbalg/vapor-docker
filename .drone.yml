@@ -1,0 +1,9 @@
+pipeline:
+  build:
+    image: docker
+    commands:
+      - docker build -f Dockerfile-builder -t vapor-builder .
+      - docker push vapor-builder
+      - docker rmi vapor-builder
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
