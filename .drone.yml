@@ -5,3 +5,9 @@ pipeline:
     tags: latest
     dockerfile: Dockerfile-builder
     secrets: [ docker_username, docker_password ]
+docker:
+    image: plugins/docker
+    repo: waddle/vapor-runner
+    tags: latest
+    dockerfile: Dockerfile-runner
+    secrets: [ docker_username, docker_password ]
