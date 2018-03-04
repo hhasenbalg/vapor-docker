@@ -1,6 +1,4 @@
 FROM swift:4.0.3
-WORKDIR /app/
-COPY . .
 RUN \
   apt-get -q update && apt-get -q -y install \
   libmysqlclient-dev \
