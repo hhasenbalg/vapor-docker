@@ -1,11 +1,11 @@
 pipeline:
-  docker:
+  builder:
     image: plugins/docker
     repo: waddle/vapor-builder
     tags: latest
     dockerfile: Dockerfile-builder
     secrets: [ docker_username, docker_password ]
-docker:
+  runner:
     image: plugins/docker
     repo: waddle/vapor-runner
     tags: latest
