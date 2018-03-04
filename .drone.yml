@@ -2,7 +2,7 @@ pipeline:
   build:
     image: docker
     commands:
-      - docker build -f Dockerfile-builder -t vapor-builder .
+      - docker build -f Dockerfile-builder -t waddle.vapor-builder .
       - docker push vapor-builder
       - docker rmi vapor-builder
     volumes:
