@@ -50,20 +50,19 @@ services:
 	app:
 		image: app
 		secrets:
-            - postgres_password
-            - hash_key
-            - cipher_key
-        environment:
-            POSTGRES_HOSTNAME: postgres-db
-            POSTGRES_PORT: 5432
-            POSTGRES_USER: username
-            POSTGRES_PASSWORD_FILE: /run/secrets/postgres_password
-            POSTGRES_DB: dbname
-
-            PORT: 9001
-
-            HASH_KEY_FILE: /run/secrets/hash_key
-            CIPHER_KEY_FILE: /run/secrets/cipher_key
+			- postgres_password
+			- hash_key
+			- cipher_key
+		environment:
+			PORT: 9001
+      POSTGRES_HOSTNAME: postgres-db
+      POSTGRES_PORT: 5432
+      POSTGRES_USER: username
+      POSTGRES_PASSWORD_FILE: /run/secrets/postgres_password
+      POSTGRES_DB: dbname
+            	
+			HASH_KEY_FILE: /run/secrets/hash_key
+			CIPHER_KEY_FILE: /run/secrets/cipher_key
 ```
 
 ##Usage in drone CI
@@ -71,7 +70,7 @@ services:
 
 ```YAML
 workspace:
-  base: /app
+	base: /app
 
 pipeline:
 	build:
