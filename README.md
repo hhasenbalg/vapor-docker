@@ -4,7 +4,7 @@
 
 Docker images for multi staged builds of Vapor apps
 
-##Useage in Dockerfile
+## Useage in Dockerfile
 
 Build the Images
 
@@ -64,7 +64,7 @@ services:
       CIPHER_KEY_FILE: /run/secrets/cipher_key
 ```
 
-##Usage in drone CI
+## Usage in drone CI
 
 
 ```YAML
