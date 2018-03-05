@@ -2,6 +2,8 @@ FROM swift:4.0.3
 RUN \
   apt-get -q update && apt-get -q -y install \
   libmysqlclient-dev \
+  libssl-dev \
+  ctls \
   && rm -r /var/lib/apt/lists/*
 
 # RUN swift build -c release && mv `swift build -c release --show-bin-path` /build/bin
