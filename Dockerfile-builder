@@ -11,7 +11,8 @@ RUN apt-get update && \
 	apt-get install -y 	libmysqlclient20 \
 						libmysqlclient-dev \
 						cstack \
-						ctls
+						ctls \
+						libssl-dev
 
 # RUN \
 #   apt-get -q update && apt-get -q -y \
