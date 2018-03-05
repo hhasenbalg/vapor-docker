@@ -79,17 +79,17 @@ pipeline:
     when:
       event: push
 
-    test:
-      image: waddle/vapor-builder
-      commands:
-        - swift test
+  test:
+    image: waddle/vapor-builder
+    commands:
+      - swift test
 
-    publish:
-      image: plugins/docker
-      repo: user/repo
-      auto_tag: true
-      secrets: [ docker_username, docker_password ]
-      when:
-        status: [ success ]
-        branch: master
+  publish:
+    image: plugins/docker
+    repo: user/repo
+    auto_tag: true
+    secrets: [ docker_username, docker_password ]
+    when:
+      status: [ success ]
+      branch: master
 ```
