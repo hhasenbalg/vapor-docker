@@ -1,8 +1,21 @@
-FROM swift:4.0.3
-RUN \
-  apt-get -q update && apt-get -q -y \
-  install 	libmysqlclient-dev \
-  			libssl-dev \
-  && rm -r /var/lib/apt/lists/*
+FROM swift:4
+
+RUN apt-get update && \
+	apt-get install -y wget \
+					apt-transport-https \
+					software-properties-common \
+					python-software-properties && \
+	wget -q https://repo.vapor.codes/apt/keyring.gpg -O- | apt-key add - && \
+	echo "deb https://repo.vapor.codes/apt $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/vapor.list && \
+	apt-get update && \
+	apt-get install -y 	libmysqlclient20 \
+						libmysqlclient-dev \
+						cstack
+
+# RUN \
+#   apt-get -q update && apt-get -q -y \
+#   install 	libmysqlclient-dev \
+#   			libssl-dev \
+#   && rm -r /var/lib/apt/lists/*
 
 # RUN swift build -c release && mv `swift build -c release --show-bin-path` /build/bin
