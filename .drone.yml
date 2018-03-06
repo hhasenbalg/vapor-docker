@@ -5,6 +5,8 @@ pipeline:
     image: plugins/docker
     repo: waddle/vapor-builder
     dockerfile: Dockerfile-builder
+    secrets: [ docker_username, docker_password ]
+    force_tag: false
     when:
         branch: [ develop, feature/*]
 
@@ -13,6 +15,8 @@ pipeline:
     image: plugins/docker
     repo: waddle/vapor-builder
     dockerfile: Dockerfile-runner
+    secrets: [ docker_username, docker_password ]
+    force_tag: false
     when:
         branch: [ develop, feature/*]
 
