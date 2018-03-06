@@ -1,15 +1,17 @@
 pipeline:
 
   test-builder:
-    group: build
+    group: test
     image: plugins/docker
+    repo: waddle/vapor-builder
     dockerfile: Dockerfile-builder
     when:
         branch: [ develop, feature/*]
-        
+
   test-runner:
-    group: build
+    group: test
     image: plugins/docker
+    repo: waddle/vapor-builder
     dockerfile: Dockerfile-runner
     when:
         branch: [ develop, feature/*]
