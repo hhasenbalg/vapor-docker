@@ -1,6 +1,8 @@
 # Docker images for Vapor
 
-[![build](https://drone.hagen-hasenbalg.de/api/badges/SeriousShit/vapor-docker/status.svg?branch=master)](https://drone.hagen-hasenbalg.de/SeriousShit/vapor-docker)
+
+
+[![master](https://drone.hagen-hasenbalg.de/api/badges/SeriousShit/vapor-docker/status.svg?branch=master)](https://drone.hagen-hasenbalg.de/SeriousShit/vapor-docker) 
 
 Docker images for multi staged builds of Vapor apps. Run your Swift app in a 65 MB small Image.
 

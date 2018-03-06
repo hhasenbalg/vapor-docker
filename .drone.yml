@@ -1,5 +1,19 @@
 pipeline:
 
+  test-builder:
+    group: build
+    image: plugins/docker
+    dockerfile: Dockerfile-builder
+    when:
+        branch: [ develop, feature/*]
+        
+  test-runner:
+    group: build
+    image: plugins/docker
+    dockerfile: Dockerfile-runner
+    when:
+        branch: [ develop, feature/*]
+
   builder:
     group: build
     image: plugins/docker
@@ -7,6 +21,8 @@ pipeline:
     tags: latest
     dockerfile: Dockerfile-builder
     secrets: [ docker_username, docker_password ]
+    when:
+        branch: master
     
   runner:
     group: build
@@ -15,3 +31,5 @@ pipeline:
     tags: latest
     dockerfile: Dockerfile-runner
     secrets: [ docker_username, docker_password ]
+    when:
+        branch: master
