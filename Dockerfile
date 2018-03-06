@@ -1,4 +1,6 @@
 FROM vapor-builder:latest as builder
+LABEL maintainer="Hagen Hasenbalg"
+
 WORKDIR /app/
 COPY . .
 
@@ -16,7 +18,7 @@ COPY --from=builder /app/Config ./Config
 # COPY --from=builder /app/Public ./Public # again, if you have this
 
 EXPOSE 9000
-# CMD ["./Run",  "serve --env=production"]
+# CMD ["./Run",  "serve --env=production"] # if you don't need the features of the docker-entrypoint.sh
 
 RUN ["chmod", "+x", "./docker-entrypoint.sh"]
 ENTRYPOINT ["./docker-entrypoint.sh"]
