@@ -6,9 +6,10 @@ pipeline:
     repo: waddle/vapor-builder
     dockerfile: Dockerfile-builder
     secrets: [ docker_username, docker_password ]
-    force_tag: false
+    dry_run: true
     when:
         branch: [ develop, feature/*]
+        event: push
 
   test-runner:
     group: test
@@ -16,26 +17,29 @@ pipeline:
     repo: waddle/vapor-builder
     dockerfile: Dockerfile-runner
     secrets: [ docker_username, docker_password ]
-    force_tag: false
+    dry_run: true
     when:
         branch: [ develop, feature/*]
+        event: push
 
   builder:
     group: build
     image: plugins/docker
     repo: waddle/vapor-builder
-    tags: latest
+    auto_tag: true
     dockerfile: Dockerfile-builder
     secrets: [ docker_username, docker_password ]
     when:
         branch: master
+        event: push
     
   runner:
     group: build
     image: plugins/docker
     repo: waddle/vapor-runner
-    tags: latest
+    auto_tag: true
     dockerfile: Dockerfile-runner
     secrets: [ docker_username, docker_password ]
     when:
         branch: master
+        event: push
