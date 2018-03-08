@@ -3,7 +3,7 @@ pipeline:
   test-builder:
     group: test
     image: plugins/docker
-    repo: waddle/vapor-builder
+    repo: hhasenbalg/vapor-builder
     dockerfile: Dockerfile-builder
     secrets: [ docker_username, docker_password ]
     dry_run: true
@@ -14,7 +14,7 @@ pipeline:
   test-runner:
     group: test
     image: plugins/docker
-    repo: waddle/vapor-builder
+    repo: hhasenbalg/vapor-builder
     dockerfile: Dockerfile-runner
     secrets: [ docker_username, docker_password ]
     dry_run: true
@@ -25,7 +25,7 @@ pipeline:
   publish-builder:
     group: build
     image: plugins/docker
-    repo: waddle/vapor-builder
+    repo: hhasenbalg/vapor-builder
     auto_tag: true
     dockerfile: Dockerfile-builder
     secrets: [ docker_username, docker_password ]
@@ -36,7 +36,7 @@ pipeline:
   publish-runner:
     group: build
     image: plugins/docker
-    repo: waddle/vapor-runner
+    repo: hhasenbalg/vapor-runner
     auto_tag: true
     dockerfile: Dockerfile-runner
     secrets: [ docker_username, docker_password ]
