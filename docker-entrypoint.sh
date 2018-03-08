@@ -48,7 +48,6 @@ for e in "${envs[@]}" ; do
 	if [ -n "${!KEY}" ]; then
 		prameters="$prameters --config:$PARAM=${!KEY}"
 	fi
-
     # printf "%s : %s. = %s\n" "$KEY" "$PARAM" "${!KEY}"
 done
 
