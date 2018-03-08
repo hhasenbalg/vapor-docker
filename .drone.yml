@@ -22,7 +22,7 @@ pipeline:
         branch: [ develop, feature/*]
         event: push
 
-  builder:
+  publish-builder:
     group: build
     image: plugins/docker
     repo: waddle/vapor-builder
@@ -32,8 +32,8 @@ pipeline:
     when:
         branch: master
         event: [push, tag]
-            
-  runner:
+
+  publish-runner:
     group: build
     image: plugins/docker
     repo: waddle/vapor-runner
