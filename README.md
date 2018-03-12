@@ -1,7 +1,5 @@
 # Docker images for Vapor
 
-
-
 [![master](https://drone.hagen-hasenbalg.de/api/badges/hhasenbalg/vapor-docker/status.svg?branch=master)](https://drone.hagen-hasenbalg.de/hhasenbalg/vapor-docker) 
 
 Docker images for multi staged builds of Vapor apps. Run your Swift app in a 65 MB small Image.
@@ -24,6 +22,7 @@ COPY . .
 
 RUN mkdir -p /build/lib && cp -R /usr/lib/swift/linux/*.so /build/lib
 RUN swift build -c release && mv `swift build -c release --show-bin-path` /build/bin
+
 
 FROM vapor-runner
 
