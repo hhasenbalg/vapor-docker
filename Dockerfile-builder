@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM swift:4
 LABEL maintainer="Hagen Hasenbalg <h.hasenbalg@me.com>"
 
 # Install CURL
@@ -11,7 +11,7 @@ RUN curl -sL https://apt.vapor.sh | bash;
 
 # Installing Swift & Vapor
 RUN apt-get update && \
-    apt-get -y install swift vapor && \
+    apt-get -y install vapor && \
     rm -rf /var/lib/apt/lists/*;
 
 RUN ["vapor", "--help"]

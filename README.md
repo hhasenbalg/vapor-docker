@@ -1,6 +1,9 @@
 # Docker images for Vapor
 
-[![master](https://drone.hagen-hasenbalg.de/api/badges/hhasenbalg/vapor-docker/status.svg?branch=master)](https://drone.hagen-hasenbalg.de/hhasenbalg/vapor-docker) 
+| Branch |      Status                                                                                                                                |
+|--------|:------------------------------------------------------------------------------------------------------------------------------------------:|
+| master | [![Build Status](https://drone.hagen-hasenbalg.de/api/badges/hhasenbalg/vapor-docker/status.svg?branch=master)](https://drone.hagen-hasenbalg.de/hhasenbalg/vapor-docker) |
+| develop| [![Build Status](https://drone.hagen-hasenbalg.de/api/badges/hhasenbalg/vapor-docker/status.svg?branch= develop)](https://drone.hagen-hasenbalg.de/hhasenbalg/vapor-docker)  |
 
 Docker images for multi staged builds of Vapor apps. Run your Swift app in a 65 MB small Image.
 
